@@ -8,8 +8,6 @@ Math-magicians is a Single Page App for all mathematics fans which allows them t
 - CSS
 - Webpack
 
-## Live Demo
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -31,12 +29,6 @@ To get a local copy up and running follow these simple example steps.
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
