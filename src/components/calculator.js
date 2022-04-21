@@ -1,9 +1,7 @@
-/* eslint-disable react/prefer-stateless-function */
-/* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import './calculator.css';
 
-export default class MyCalculator extends React.Component {
+export default class MyCalculator extends PureComponent {
   render() {
     return (
       <div className="container">
