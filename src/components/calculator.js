@@ -1,35 +1,29 @@
 import React, { PureComponent } from 'react';
+import calculate from '../logic/calculator';
+import '../logic/operate';
+import Displayed from './display';
+import Buttons from './button';
 import './calculator.css';
 
 export default class MyCalculator extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = (e) => {
+    const newContent = calculate(this.state, e.target.innerText);
+    this.setState(newContent);
+  };
+
   render() {
+    const { next, total, operation } = this.state;
     return (
       <div className="container">
-        <form>
-          <input type="text" value={0} />
-        </form>
+        <Displayed next={next} total={total} operation={operation} />
 
-        <div className="digits">
-          <button type="button">AC</button>
-          <button type="button">+/&ndash;</button>
-          <button type="button">%</button>
-          <button type="button" className="operators">&divide;</button>
-          <button type="button">7</button>
-          <button type="button">8</button>
-          <button type="button">9</button>
-          <button type="button" className="operators">&times;</button>
-          <button type="button">4</button>
-          <button type="button">5</button>
-          <button type="button">6</button>
-          <button type="button" className="operators">&ndash;</button>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-          <button type="button" className="operators">+</button>
-          <button type="button" className="zero">0</button>
-          <button type="button">.</button>
-          <button type="button" className="operators">=</button>
-        </div>
+        <Buttons event={this.handleClick} />
       </div>
     );
   }
