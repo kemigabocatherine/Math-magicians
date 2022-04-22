@@ -1,30 +1,28 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import calculate from '../logic/calculator';
 import '../logic/operate';
 import Displayed from './display';
 import Buttons from './button';
 import './calculator.css';
 
-export default class MyCalculator extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.handleClick = this.handleClick.bind(this);
-  }
+const MyCalculator = () => {
+  const [value, setValue] = useState({});
 
-  handleClick = (e) => {
-    const newContent = calculate(this.state, e.target.innerText);
-    this.setState(newContent);
+  const handleClick = (e) => {
+    const outPut = e.target.innerText;
+    const newContent = calculate(value, outPut);
+    setValue(newContent);
   };
 
-  render() {
-    const { next, total, operation } = this.state;
-    return (
-      <div className="container">
-        <Displayed next={next} total={total} operation={operation} />
+  const { next, total, operation } = value;
 
-        <Buttons event={this.handleClick} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="container">
+      <Displayed next={next} total={total} operation={operation} />
+
+      <Buttons event={handleClick} />
+    </div>
+  );
+};
+
+export default MyCalculator;

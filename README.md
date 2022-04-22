@@ -2,11 +2,17 @@
 
 Math-magicians is a Single Page App for all mathematics fans which allows them to make simple calculations and read random math-related quotes.
 
+![Screenshot from 2022-04-22 19-27-16](https://user-images.githubusercontent.com/86133437/164756933-4a6f64f3-ee53-4e48-9c6a-c779bea88f00.png)
+
 ## Built With
 
 - React
 - CSS
 - Webpack
+
+## Live Demo
+
+Click to see the app
 
 ## Getting Started
 
