@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const showOutcome = (total, operation, next) => {
@@ -11,22 +11,11 @@ const showOutcome = (total, operation, next) => {
   return outcome;
 };
 
-class Displayed extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { total, operation, next } = this.props;
-
-    return (
-      <div>
-        <div id="result">{showOutcome(total, operation, next)}</div>
-      </div>
-    );
-  }
-}
+const Displayed = ({ total, operation, next }) => (
+  <div>
+    <div id="result">{showOutcome(total, operation, next)}</div>
+  </div>
+);
 
 Displayed.propTypes = {
   total: PropTypes.string.isRequired,

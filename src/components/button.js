@@ -13,23 +13,13 @@ const setClass = (button) => {
   return button;
 };
 
-class Buttons extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const buttons = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
 
-  render() {
-    const { event } = this.props;
-    const buttons = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
-
-    return (
-      <div className="digits">
-        {buttons.map((button) => (<button key={button} className={setClass(button)} onClick={event} type="button">{button}</button>))}
-      </div>
-    );
-  }
-}
+const Buttons = ({ event }) => (
+  <div className="digits">
+    {buttons.map((button) => (<button key={button} className={setClass(button)} onClick={event} type="button">{button}</button>))}
+  </div>
+);
 
 Buttons.propTypes = {
   event: PropTypes.func.isRequired,
