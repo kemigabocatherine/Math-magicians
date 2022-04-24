@@ -12,7 +12,7 @@ Math-magicians is a Single Page App for all mathematics fans which allows them t
 
 ## Live Demo
 
-Click to see the app
+Click [Math Magicians](https://kemigabocatherine.github.io/Math-magicians/) to view the app
 
 ## Getting Started
 
