@@ -1,11 +1,20 @@
 import React, { PureComponent } from 'react';
-import MyCalculator from './components/calculator';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './pages/Navbar';
+import CalculatorPage from './pages/CalculatorP';
+import Home from './pages/Home';
+import Quotes from './pages/Quotes';
 
 class App extends PureComponent {
   render() {
     return (
       <div className="App">
-        <MyCalculator />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Calculator" element={<CalculatorPage />} />
+          <Route path="/Quotes" element={<Quotes />} />
+        </Routes>
       </div>
     );
   }
